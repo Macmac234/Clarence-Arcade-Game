@@ -1,3 +1,15 @@
+/* Home Page Left Background Image */
+.home-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+    background: url('mypicture1.png') no-repeat left center/cover;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 0;
+}
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -314,7 +326,63 @@ body {
 /* Games Section */
 .games-section {
     padding: 5rem 0;
-    background: rgba(0, 0, 0, 0.2);
+    background: #007bff33;
+    position: relative;
+    overflow: hidden;
+}
+
+.games-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.home-bg-image {
+    position: absolute;
+    top: 0;
+    right: 5;
+    width: 30%;
+    height: 100%;
+    background: url('mypicture1.png') no-repeat right center/cover;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.home-bg-image {
+    position: absolute;
+    top: 0;
+    left: 70rem;
+    width: 50%;
+    height: 100%;
+    background: url('mypicture1.png') no-repeat center/cover;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+.games-bg-image {
+    position: absolute;
+    top: 0;
+    left: -25rem;
+    width: 50%;
+    height: 100%;
+    background: url('mypicture1.png') no-repeat center/cover;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.games-section .container {
+    position: relative;
+    z-index: 1;
 }
 
 .section-title {
@@ -700,7 +768,7 @@ body {
 .game-input:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+    box-shadow: 0 0 0 3px #007bff33;
 }
 
 .game-button {
@@ -993,9 +1061,6 @@ body {
     margin: 10px 0;  /* Add some vertical spacing */
 }
 
-
-
-
 .about-image-container {
     position: relative;
     border-radius: 50%;
@@ -1085,8 +1150,31 @@ body {
 
 /* About Image */
 .about-image-container {
-    text-align: center;
-    margin-bottom: 2rem;
+    position: relative;
+    border-radius: 50%;
+    padding: 5px; /* Space for the border */
+    display: inline-block;
+    overflow: hidden;
+}
+
+.about-image-container::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    background-size: 300% 300%;
+    animation: animateBorder 4s linear infinite;
+    z-index: -1;
+}
+
+.about-image-container img {
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
 }
 
 .about-image {
@@ -1316,10 +1404,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-.games-section {
-    background-image: url('mypicture_transparent.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+
 
